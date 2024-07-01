@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "JSON Data Sender",
+  "version": "1.0",
+  "description": "Send JSON data to a webhook",
+  "permissions": ["storage"],
+  "host_permissions": ["<all_urls>"],
+  "options_page": "options.html",
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

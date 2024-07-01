@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>JSON Data Sender Info</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+    .field-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+    .field-container span {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    .field-container input {
+      flex-grow: 1;
+      padding: 5px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #4285f4;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>JSON Data Sender</h1>
+  <p>Version: 1.0</p>
+  <p>Created by: <a href="https://neronline.co.il" target="_blank">Neronline</a></p>
+  <p>This extension allows you to send JSON data to a webhook.</p>
+  <p>If you don't have an account yet, you can <a href="https://www.make.com/en/register?pc=neronlinecoupon" target="_blank">register here</a>.</p>
+  <div id="fields-container"></div>
+  <button id="addFieldBtn">Add Field</button>
+  <button id="openOptionsBtn">Edit Webhook URL</button>
+  <script src="info.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+    }
+    .field-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .field-container input {
+      flex-grow: 1;
+      margin-right: 10px;
+      padding: 5px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #4285f4;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    #info-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: transparent;
+      color: #4285f4;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <button id="info-btn">?</button>
+  <h3>JSON Data</h3>
+  <div id="fieldsContainer"></div>
+  <button id="addFieldBtn">Add Field</button>
+  <button id="sendBtn">Send Data</button>
+  <div style="margin-top: 20px;">
+    <span>Created by <a href="https://neronline.co.il" target="_blank">Neronline</a></span>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

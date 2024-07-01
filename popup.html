@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      width: 350px;
+    }
+    .field-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .field-key {
+      flex: 0 0 100px;
+      font-weight: bold;
+    }
+    .field-container input {
+      flex-grow: 1;
+      padding: 5px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    #addFieldBtn, #sendBtn {
+      background-color: #4285f4;
+      color: white;
+      margin-top: 10px;
+    }
+    #profileSelect {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 15px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+    .notification {
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      z-index: 1000;
+    }
+    
+    .notification.error {
+      background-color: #ff4444;
+    }
+    
+    .notification.success {
+      background-color: #00C851;
+    }
+    
+    .notification.info {
+      background-color: #33b5e5;
+    }
+    .notification.show {
+      opacity: 1;
+    }
+    #webhookResponse {
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      background-color: #f9f9f9;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+    #addFieldDialog {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    #addFieldDialog input {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <button id="settings-btn">⚙️</button>
+  <h2 style="color: #4285f4;">JSON Data Sender</h2>  <h4>Choose Hook Profile:</h4>
+  <select id="profileSelect"></select>
+  <div id="fieldsContainer"></div>
+  <button id="addFieldBtn">Add Field</button>
+  <button id="sendBtn">Send Data</button>
+  <div id="webhookResponse"></div>
+  <div style="margin-top: 20px;">
+    <span>Created by <a href="https://neronline.co.il" target="_blank">Neronline</a></span>
+  </div>
+  <div id="notification" class="notification" style="display: none;"></div>
+
+  <div id="addFieldDialog">
+    <input type="text" id="newFieldKey" placeholder="Enter key">
+    <input type="text" id="newFieldValue" placeholder="Enter value">
+    <button id="saveNewFieldBtn">Save</button>
+    <button id="cancelNewFieldBtn">Cancel</button>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

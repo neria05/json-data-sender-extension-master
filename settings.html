@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Manage Hook Profiles</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #f0f4f8;
+      color: #333;
+      text-align: center;
+    }
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    h1, h2 {
+      color: #4285f4;
+      margin-top: 0;
+    }
+    .profile-container {
+      border: 1px solid #e0e0e0;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+      transition: box-shadow 0.3s ease;
+    }
+    .profile-container:hover {
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+    input[type="text"], input[type="url"], select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    button {
+      background-color: #4285f4;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 5px;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #3367d6;
+    }
+    .remove-btn {
+      background-color: #ff6b6b;
+    }
+    .remove-btn:hover {
+      background-color: #e55757;
+    }
+    .field-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      justify-content: center;
+    }
+    .field-container input {
+      flex-grow: 1;
+      margin-right: 10px;
+    }
+    .utility-buttons {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 0.8em;
+    }
+    .utility-buttons button {
+      padding: 5px 10px;
+      font-size: 0.9em;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+    .utility-buttons button:hover {
+      background-color: #e0e0e0;
+    }
+    #profiles {
+      margin-top: 20px;
+    }
+    .info-section {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #e0e0e0;
+    }
+    .notification {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+    .notification.show {
+      opacity: 1;
+    }
+    .notification.info { background-color: #4285f4; }
+    .notification.success { background-color: #0f9d58; }
+    .notification.error { background-color: #db4437; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Manage Hook Profiles</h1>
+    <div class="utility-buttons">
+      <button id="exportBtn">Export</button>
+      <button id="importBtn">Import</button>
+      <button id="clearCacheBtn">Clear Cache</button>
+    </div>
+    <select id="profileSelector"></select>
+    <div id="profiles"></div>
+    <button id="addProfileBtn">Add New Hook Profile</button>
+    <button id="deleteProfileBtn">Delete Selected Hook Profile</button>
+    <div class="info-section">
+      <h2>About</h2>
+      <p>Version: 1.2</p>
+      <p>Created by: <a href="https://neronline.co.il" target="_blank">Neronline</a></p>
+      <p>This extension allows you to send JSON data to multiple webhooks using hook profiles.</p>
+      <p>If you don't have an account yet, you can <a href="https://www.make.com/en/register?pc=neronlinecoupon" target="_blank">register here</a>.</p>
+    </div>
+  </div>
+  <input type="file" id="importFile" style="display: none;" accept=".json">
+  <div id="notification" class="notification"></div>
+  <script src="settings.js"></script>
+</body>
+</html>
